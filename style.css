@@ -548,12 +548,12 @@ footer {
 }
 
 .navbar .navbar-nav{
-  position: absolute;
-  top: 100%;
+  position: fixed;
+  top: 71px;
   right: -100%;
   background-color: #fff;
   width: 20rem;
-  height: 100vh;
+  height: calc(100vh - 71px);
   transition: 0.3s;
   display: block;
 }
