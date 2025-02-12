@@ -1,16 +1,31 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('#hamburger-menu');
-    const navbarNav = document.querySelector('.navbar-nav');
+$(".sidebar ul li").on('click', function () {
+    $(".sidebar ul li.active").removeClass('active');
+    $(this).addClass('active');
+});
 
-    hamburger.addEventListener('click', function(e) {
-        navbarNav.classList.toggle('active');
-        e.preventDefault();
-    });
+$('.open-btn').on('click', function () {
+    $('.sidebar').addClass('active');
+});
 
-    // Klik di luar sidebar untuk menghilangkan nav
-    document.addEventListener('click', function(e) {
-        if(!hamburger.contains(e.target) && !navbarNav.contains(e.target)) {
-            navbarNav.classList.remove('active');
+$('.close-btn').on('click', function () {
+    $('.sidebar').removeClass('active');
+});
+
+// Menambahkan event handler untuk klik di luar sidebar
+$(document).on('click', function(e) {
+    // Cek jika layar kecil (mobile)
+    if (window.innerWidth <= 767) {
+        // Cek apakah yang diklik bukan sidebar, bukan tombol open-btn, dan sidebar sedang aktif
+        if (!$(e.target).closest('.sidebar').length && 
+            !$(e.target).closest('.open-btn').length && 
+            $('.sidebar').hasClass('active')) {
+            
+            $('.sidebar').removeClass('active');
         }
-    });
+    }
+});
+
+// Mencegah sidebar tertutup ketika mengklik di dalam sidebar
+$('.sidebar').on('click', function(e) {
+    e.stopPropagation();
 });
