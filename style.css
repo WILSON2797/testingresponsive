@@ -431,3 +431,24 @@ table.dataTable tbody td {
     background-color: #218838 !important; /* Warna hijau yang lebih gelap saat hover */
     color: white !important;
 }
+
+/* Animasi untuk modal berputar */
+@keyframes rotateIn {
+    0% {
+        transform: rotate(0deg) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: rotate(180deg) scale(0.5);
+        opacity: 0.5;
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Terapkan animasi ke modal */
+.modal.fade .modal-dialog {
+    animation: rotateIn 0.9s ease-out;
+}
