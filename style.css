@@ -2,6 +2,26 @@ body {
     background:#eee;
 }
 
+.modal-dialog {
+    max-height: 90vh;
+    overflow-y: auto;
+}
+.select2-container--open .select2-dropdown {
+    top: auto;
+    bottom: 100%;
+}
+.select2-dropdown {
+    max-height: 300px;
+    overflow-y: auto;
+}
+@media (max-height: 768px) {
+    .select2-container--open .select2-dropdown--below {
+        top: auto;
+        bottom: 100%;
+    }
+}
+
+
 /* tambahan css untuk logo */
 
 .sidebar-logo {
