@@ -431,24 +431,36 @@ table.dataTable tbody td {
     background-color: #218838 !important; /* Warna hijau yang lebih gelap saat hover */
     color: white !important;
 }
-
-/* Animasi untuk modal berputar */
-@keyframes rotateIn {
+/* Animasi untuk modal berputar, muncul dari atas dan memantul */
+@keyframes rotateDropAndBounce {
     0% {
-        transform: rotate(0deg) scale(0);
+        transform: translateY(-100%) rotate(-180deg);
         opacity: 0;
     }
-    50% {
-        transform: rotate(180deg) scale(0.5);
+    40% {
+        transform: translateY(-50%) rotate(-90deg);
         opacity: 0.5;
     }
-    100% {
-        transform: rotate(360deg) scale(1);
+    60% {
+        transform: translateY(10%) rotate(0deg);
         opacity: 1;
+    }
+    80% {
+        transform: translateY(-5%) rotate(0deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0deg);
     }
 }
 
-/* Terapkan animasi ke modal */
+/* Menerapkan animasi ke modal */
+.modal.fade.show .modal-dialog {
+    animation: rotateDropAndBounce 1.2s ease-out forwards;
+    transform-origin: top center;
+}
+
+/* Menimpa animasi yang sudah ada sebelumnya */
 .modal.fade .modal-dialog {
-    animation: rotateIn 0.9s ease-out;
+    animation: none;
+    transform: translate(0, 0);
 }
