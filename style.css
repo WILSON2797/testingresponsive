@@ -56,13 +56,13 @@ body {
 }
 
 .navbar {
-    background-color: #2b738b;
+    background-color: #8c999d;
 }
 
 .content {
     min-height: 100vh;
     width: 100%;
-    background-color:  #d5dbdb 
+    background-color:  #dfe1e1 
 }
 
 hr.h-color{
@@ -83,7 +83,11 @@ hr.h-color{
 .sidebar li a{
     color: #fff;
    }
-
+.card {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
 
 /* untuk mengatur Resposive media screen Layar Handphone */
 @media(max-width: 767px){
@@ -101,6 +105,13 @@ hr.h-color{
    .close-btn {
     display: block; /* Tampilkan di mobile */
 }
+
+/* ini content responsive */
+.card {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
  }
 
  @media (min-width: 1024px) {
@@ -209,7 +220,8 @@ hr.h-color{
 /* Responsive adjustments */
 @media (max-width: 576px) {
     .card {
-        margin: 1rem;
+        margin-left: 0;
+        margin-right: 0;
     }
     
     h2 {
@@ -227,15 +239,37 @@ hr.h-color{
 
 
 .table-responsive {
-    margin: 30px 0;
+    margin: 30px 0; */
+    width: 100% !important;
 }
 .table-wrapper {
-    min-width: 1000px;
-    background: #fff;
+    width: 100% !important;
+    margin-right: 100%;
+    padding: 20px 25px;
+    /* overflow-x: auto; */
+    margin-right: 2px;
+    /* background: #fff;
     padding: 20px 25px;
     border-radius: 3px;
-    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05); */
 }
+table.dataTable {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 2px !important;
+    /* table-layout: auto; */
+    
+}
+
+/* Atur lebar spesifik untuk setiap kolom */
+table.dataTable thead th,
+table.dataTable tbody td {
+    white-space: nowrap;
+    overflow: auto;
+    text-overflow: ellipsis;
+    width: 1000px;
+}
+
 .pagination {
     float: right;
     margin: 0 0 5px;
